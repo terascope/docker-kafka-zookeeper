@@ -1,19 +1,11 @@
-Docker Kafka Zookeeper ![Build Status](https://travis-ci.org/hey-johnnypark/docker-kafka-zookeeper.svg?branch=master)
+Docker Kafka Zookeeper ![Build Status](https://travis-ci.org/terascope/docker-kafka-zookeeper.svg?branch=master)
 ======================
 Docker image for Kafka message broker including Zookeeper
-
-Build
------
-```
-$ docker build .
-[...]
-Successfully built 9b382d40bccc
-```
 
 Run container
 -------------
 ```
-docker run -p 2181:2181 -p 9092:9092 -e ADVERTISED_HOST=localhost 9b382d40bccc
+docker run -p 2181:2181 -p 9092:9092 -e ADVERTISED_HOST=localhost terascope/kafka-zookeeper
 ```
 
 Test
@@ -40,8 +32,8 @@ test3
 
 Get from Dockerhub
 ------------------
-https://hub.docker.com/r/johnnypark/kafka-zookeeper/
+https://hub.docker.com/r/terascope/docker-kafka-zookeeper/
 
 Credits
 -------
-Originally cloned and inspired by https://github.com/spotify/docker-kafka
+Originally cloned and inspired by https://github.com/hey-johnnypark/docker-kafka-zookeeper and https://github.com/spotify/docker-kafka.
