@@ -2,8 +2,9 @@
 
 set -e
 
-if [ -n "$ZOOKEEPER_PORT" ]; then
-    sed -r -i "s/(clientPort)=(.*)/\\1=$ZOOKEEPER_PORT/g" "$ZOOKEEPER_HOME/conf/zoo.cfg"
-fi
+ZOOKEEPER_CONFIG="$KAFKA_HOME/config/zookeeper.properties"
 
-"$ZOOKEEPER_HOME/bin/zkServer.sh" start-foreground
+sed -r -i "s/(clientPort)=(.*)/\\1=${ZOOKEEPER_PORT:-2181}/g" "$ZOOKEEPER_CONFIG"
+
+# Run zookeeper
+"zookeeper-server-start.sh" "$ZOOKEEPER_CONFIG"

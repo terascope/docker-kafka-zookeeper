@@ -5,7 +5,7 @@ Docker image for Kafka message broker including Zookeeper
 Run container
 -------------
 ```
-docker run -p 2181:2181 -p 9092:9092 -e ADVERTISED_HOST=localhost terascope/kafka-zookeeper:v1.0.0
+docker run --rm -p 2181:2181 -p 9092:9092 -e ADVERTISED_HOST=localhost terascope/kafka-zookeeper:v1.1.0
 ```
 
 Test
